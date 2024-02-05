@@ -1,0 +1,40 @@
+.mainHeadDiv ul{
+display: flex;
+justify-content: space-around;
+align-items: center;
+list-style-type: none;
+
+}
+.mainHeadDiv ul li:nth-child(1) img{
+    width:200px ;
+}
+.mainHeadDiv ul li:nth-child(2) input{
+width:800px;
+height: 50px;
+font-size: 20px;
+border-radius: 20px;
+outline: none;
+border: 1px solid #ccc;;
+padding: 0px 30px;
+}
+/* Header.css */
+.no-underline {
+    text-decoration: none;
+    color: #00BFA6;
+    font-size: 20px;
+ 
+   transition: 5sec ease-in-out;
+  }
+.no-underline:hover{
+   text-decoration: underline;
+   text-underline-offset: 0.25rem;
+   text-decoration-thickness: 2px;
+
+
+  }
+  .profile-Img{
+    border-radius: 9999px; 
+    height: 1.75rem;
+    width: 1.75rem; 
+    object-fit: cover;
+  }
