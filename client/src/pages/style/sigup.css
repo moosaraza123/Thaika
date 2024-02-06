@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:' Poppins',sans-serif;
+}
+.SignupDiv{
+
+display: flex;
+flex-direction: row;
+margin: 1% 3% 0% 3%;
+
+
+}
+.SignMockup{
+    display: flex;
+    flex-direction: column;
+
+}
+.mockup2{
+    position: relative;
+
+}
+#mockup2{
+width: 152px;
+height: 286px;
+flex-shrink: 0;
+
+
+}
+#mockup3{
+    position: absolute;
+    bottom: 7%;
+}
+#mockupText{
+    color: rgba(0, 191, 166, 0.50);
+
+
+
+font-size: 25px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+#mockupText2{
+    color: rgba(255, 0, 0, 0.30);
+
+font-family: Poppins;
+font-size: 25px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.label{
+    color: rgba(0, 191, 166, 0.50);
+
+
+
+font-size: 25px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.label span{
+
+color: #F00;
+font-family: Poppins;
+font-size: 25px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.SignInForm {
+ 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  align-items: center;
+}
+.SignInForm input{
+    display: block;
+    border: none;
+    outline: none;
+border-bottom: 1px solid #ccc; ;
+    width: 600px;
+    height: 50px;
+    font-size: 30px;
+
+}
+.SinputFields{
+    margin: 9% 0%;
+}
+.SignInBtn1{
+    display: flex;
+    width: 593px;
+    padding: 25px 35px 19px 12px;
+    justify-content: center;
+    align-items: center;
+    background: #00BFA6;
+    font-size: 30px;
+    color: #fff;
+    font-family: 'Poppins',sans-serif;
+     border: none;
+     outline: none;
+     cursor: pointer;
+     transition: 0.5s;
+     margin-bottom: 1%;
+border-radius: 5px;
+    }
+.SignInBtn1:hover{
+    width: 500px;
+}
+.SignInBtn2{
+    display: inline-flex;
+padding: 21px 30px 19px 12px;
+align-items: center;
+justify-content: center;
+gap: 12px;
+ width: 593px;
+ color: #FFF;
+
+text-align: center;
+
+font-size: 30px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+background: #4285F4;
+border: none;
+outline: none;
+cursor: pointer;
+transition: 0.5s;
+border-radius: 5px;
+}
+.SignInBtn2:hover{
+    width: 500px;
+}
+.SignInBtn2 img{
+    background-color: #FFF;
+    padding: 5px;
+    border-radius: 5px;
+}
