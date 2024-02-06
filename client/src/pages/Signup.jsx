@@ -37,7 +37,7 @@ function Signup() {
       navigate('/sign-in');
     } catch (error) {
       setLoading(false);
-      setError(true);
+      setError(error.message);
     }
   };
   return <>
