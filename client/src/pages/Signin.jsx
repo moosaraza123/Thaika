@@ -5,12 +5,18 @@ import Sign from '/Sign.svg'
 import Rectangle from '/Rectangle.svg'
 import P from '/n.svg'
 import './style/SignIn.css'
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  signInStart,
+  signInSuccess,
+  signInFailure,
+} from '../redux/user/userSlice.js';
 
 function Signin() {
   const [formData, setFormData] = useState({});
-  const [error, setError] = useState(false);
-  const [loadig, setLoading] = useState(false);
+  const {loadig,error}=useSelector((state)=>state.user)
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
@@ -18,8 +24,8 @@ function Signin() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      setLoading(true);
-      setError(false);
+      dispatch(signInStart());
+     
       const res = await fetch('/api/auth/signin', {
         method: 'POST',
         headers: {
@@ -29,15 +35,14 @@ function Signin() {
       });
       const data = await res.json();
       console.log(data);
-      setLoading(false);
       if (data.success === false) {
-        setError(true);
+        dispatch(signInFailure(data.message));
         return;
       }
+      dispatch(signInSuccess(data));
       navigate('/');
     } catch (error) {
-      setLoading(false);
-      setError(error.message);
+      dispatch(signInFailure(error.message));
     }
   };
   return <>
@@ -75,7 +80,7 @@ function Signin() {
               </label>
               <input type="password" id="password" onChange={handleChange} />
             </div>
-            <button disabled={loadig}  className="SignInBtn1">{loadig?'loading...':'Sign Up'}</button>
+            <button disabled={loadig}  className="SignInBtn1">{loadig?'loading...':'Sign In'}</button>
           {/* <OAuth/> */}
           </form>
 
