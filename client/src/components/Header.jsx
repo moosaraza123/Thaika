@@ -6,10 +6,10 @@ import React from 'react';
 import Logo from '/WebLogo.png';
 import home from '/home.png';
 import './Header.css';
-// import {useSelector} from 'react-redux'
+import {useSelector} from 'react-redux'
 
 function Header() {
-  
+  const { currentUser } = useSelector((state) => state.user);
   return (
     <>
       <div className="mainHeadDiv">
@@ -38,11 +38,25 @@ function Header() {
             </Link>
           </li>
 
-          <li>
+          {/* <li>
+            
             <Link to='/sign-in' className="no-underline">
               Sign In
             </Link>
-          </li>
+          </li> */}
+          <Link to='/profile'>
+            {currentUser ? (
+              <img
+                className='headerprofileimg'
+                src={currentUser.avatar}
+                alt='profile'
+              />
+            ) : (
+              <li className='no-underline'> Sign in</li>
+            )}
+          </Link>
+
+
         </ul>
       </div>
     </>

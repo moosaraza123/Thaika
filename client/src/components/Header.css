@@ -38,3 +38,9 @@ padding: 0px 30px;
     width: 1.75rem; 
     object-fit: cover;
   }
+  .headerprofileimg {
+    border-radius: 9999px; /* Equivalent to rounded-full in Tailwind CSS */
+    height: 1.75rem; /* Equivalent to h-7 in Tailwind CSS */
+    width: 1.75rem; /* Equivalent to w-7 in Tailwind CSS */
+    object-fit: cover; /* Equivalent to object-cover in Tailwind CSS */
+  }
