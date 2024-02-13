@@ -6,6 +6,7 @@ import Rectangle from '/Rectangle.svg'
 import P from '/n.svg'
 import './style/SignIn.css'
 import { useDispatch, useSelector } from 'react-redux';
+import OAuth from '../components/OAuth.jsx';
 import {
   signInStart,
   signInSuccess,
@@ -81,7 +82,7 @@ function Signin() {
               <input type="password" id="password" onChange={handleChange} />
             </div>
             <button disabled={loadig}  className="SignInBtn1">{loadig?'loading...':'Sign In'}</button>
-          {/* <OAuth/> */}
+          <OAuth/>
           </form>
 
           {error && <p>{error}</p>}

@@ -5,7 +5,7 @@ import Sign from '/Sign.svg'
 import Rectangle from '/Rectangle.svg'
 import P from '/P.svg'
 import './style/sigup.css'
-
+import OAuth from '../components/OAuth';
 function Signup() {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(false);
@@ -81,7 +81,7 @@ function Signup() {
               <input type="password" id="password" onChange={handleChange} />
             </div>
             <button disabled={loadig}  className="SignInBtn1">{loadig?'loading...':'Sign Up'}</button>
-          {/* <OAuth/> */}
+          <OAuth/>
           </form>
 
           {error && <p>{error}</p>}
