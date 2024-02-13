@@ -1,0 +1,84 @@
+.mainProfileDiv{
+    margin-top: 5%;
+width: 100%;
+display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.profile_detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    position: relative;
+}
+.profile_detail img{
+    border-radius: 9999%;
+    cursor: pointer;
+    width: 140px;
+    margin-bottom:2% ;
+height: 139px;
+flex-shrink: 0;
+}
+.mainProfileDiv h1{
+    color: #00BFA6;
+    position: absolute;
+top: 18%;
+left: 5%;
+font-size: 50px;
+
+font-weight: 900;
+
+}
+.profile_detail button{
+    width: 500px;
+    height: 54px;
+flex-shrink: 0;
+
+background: #4285F4;    
+color: #fff;
+font-size: 20px;
+font-weight: 900;
+border: none;
+
+}
+.profile_detail input{
+margin: 4%;
+width: 500px;
+height: 54px;
+flex-shrink: 0;
+border: none;
+border-bottom:1px solid #00BFA6  ;
+padding-left:2% ;
+font-size: 20px;
+}
+.secondmain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.secondmain button{
+    width: 500px;
+height: 94px;
+flex-shrink: 0;
+margin-top: 5%;
+background: #00BFA6;
+color: #FFF;
+
+font-size: 50px;
+
+font-weight: 900;
+border: none;
+outline: none;
+cursor: pointer;
+}
+.deleteAccount{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: red;
+    margin-top: 5%;
+}
+.deleteAccount span{
+    cursor: pointer;
+}
