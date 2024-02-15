@@ -56,7 +56,7 @@ const initialState = {
         state.loading = false;
       },
       signOutUserStart: (state) => {
-        state.loading = false;
+        state.loading = true;
       },
     
     }});
