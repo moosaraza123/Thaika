@@ -13,7 +13,8 @@ import {
   updateUserFailure,
   deleteUserFailure,
   deleteUserStart,
-  deleteUserSuccess
+  deleteUserSuccess,
+  signOutUserStart,
 } from "../redux/user/userSlice";
 import { useDispatch } from "react-redux";
 import "./style/Profile.css";
@@ -99,6 +100,20 @@ function Profile() {
       dispatch(deleteUserFailure(error.message));
     }
   };
+  const handleSignOut = async () => {
+    try {
+      dispatch(signOutUserStart());
+      const res = await fetch('/api/auth/signout');
+      const data = await res.json();
+      if (data.success === false) {
+        dispatch(deleteUserFailure(data.message));
+        return;
+      }
+      dispatch(deleteUserSuccess(data));
+    } catch (error) {
+      dispatch(deleteUserFailure(data.message));
+    }
+  };
 
   return (
     <>
@@ -161,7 +176,7 @@ function Profile() {
               {loading ? "Loading..." : "Update"}
             </button>
             <div className="deleteAccount">
-              <span>sign out</span>
+              <span onClick={handleSignOut}>sign out</span>
               <span onClick={handleDeleteUser}>delete account</span>
              
             </div>
