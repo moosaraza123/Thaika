@@ -11,10 +11,13 @@ import {
   updateUserStart,
   updateUserSuccess,
   updateUserFailure,
+<<<<<<< HEAD
   deleteUserFailure,
   deleteUserStart,
   deleteUserSuccess,
   signOutUserStart,
+=======
+>>>>>>> origin/main
 } from "../redux/user/userSlice";
 import { useDispatch } from "react-redux";
 import "./style/Profile.css";
@@ -84,6 +87,7 @@ function Profile() {
       dispatch(updateUserFailure(error.message));
     }
   };
+<<<<<<< HEAD
   const handleDeleteUser = async () => {
     try {
       dispatch(deleteUserStart());
@@ -114,6 +118,8 @@ function Profile() {
       dispatch(deleteUserFailure(data.message));
     }
   };
+=======
+>>>>>>> origin/main
 
   return (
     <>
@@ -176,8 +182,13 @@ function Profile() {
               {loading ? "Loading..." : "Update"}
             </button>
             <div className="deleteAccount">
+<<<<<<< HEAD
               <span onClick={handleSignOut}>sign out</span>
               <span onClick={handleDeleteUser}>delete account</span>
+=======
+              <span>sign out</span>
+              <span>delete account</span>
+>>>>>>> origin/main
              
             </div>
             

@@ -34,6 +34,7 @@ const initialState = {
         state.error = action.payload;
         state.loading = false;
       },
+<<<<<<< HEAD
       deleteUserStart: (state) => {
         state.loading = true;
       },
@@ -58,6 +59,9 @@ const initialState = {
       signOutUserStart: (state) => {
         state.loading = true;
       },
+=======
+  
+>>>>>>> origin/main
     
     }});
       export const {
@@ -66,6 +70,7 @@ const initialState = {
         signInFailure,
         updateUserFailure,
         updateUserSuccess,
+<<<<<<< HEAD
         updateUserStart,
         deleteUserStart,
         deleteUserSuccess,
@@ -73,6 +78,9 @@ const initialState = {
         signOutUserFailure,
         signOutUserSuccess,
         signOutUserStart
+=======
+        updateUserStart
+>>>>>>> origin/main
         
       } = userSlice.actions;
       
