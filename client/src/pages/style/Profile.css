@@ -40,8 +40,15 @@ font-size: 24px;
 font-weight: 900;
 border: none;
 margin-top: 2%;
-
+cursor: pointer;
+transition: 1s;
 }
+.profile_detail button:hover{
+    background-color: #FFF;
+     color: #00BFA6;
+     border: 1px solid #00BFA6;
+     font-size: 30px;
+ }
 .profile_detail input{
 margin: 4%;
 width: 500px;
@@ -59,11 +66,13 @@ color: grey;
     justify-content: center;
     align-items: center;
 }
-.secondmain button{
+.links{
     width: 500px;
 height: 94px;
-flex-shrink: 0;
-margin-top: 5%;
+display: flex;
+justify-content: center;
+align-items: center;
+
 background: #00BFA6;
 color: #FFF;
 
@@ -73,7 +82,14 @@ font-weight: 900;
 border: none;
 outline: none;
 cursor: pointer;
-
+text-decoration: none;
+transition: 1s;
+}
+.links:hover{
+   background-color: #FFF;
+    color: #00BFA6;
+    border: 1px solid #00BFA6;
+font-size: 55px;
 }
 .deleteAccount{
     width: 100%;

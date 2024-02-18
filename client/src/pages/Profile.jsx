@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import {Link }from 'react-router-dom'
 import { useSelector } from "react-redux";
 import {
   getDownloadURL,
@@ -184,9 +185,7 @@ function Profile() {
               <span onClick={handleSignOut}>sign out</span>
               <span onClick={handleDeleteUser}>delete account</span>
 
-              <span>sign out</span>
-              <span>delete account</span>
-
+             
              
             </div>
             
@@ -194,8 +193,7 @@ function Profile() {
           </div>
         </form>
         <div className="secondmain">
-          <button>create Listening</button>
-          <button>Show Listening</button>
+          <Link className="links" to={"/create-listing"}>create Listing</Link>
         </div>
       </div>
     </>
