@@ -7,7 +7,7 @@ import Profile from './pages/Profile';
 import PrivateRoute from './components/PrivateRoute';
 import Header from './components/Header.jsx';
 import CreateListing from './pages/CreateListing.jsx';
-import ShowListings from './pages/showListings.jsx';
+import UpdateListing from './pages/UpdateListing';
 export default function App() {
   return (
     <BrowserRouter>
@@ -21,8 +21,10 @@ export default function App() {
         <Route element={<PrivateRoute />}>
           <Route path='/profile' element={<Profile />} />
           <Route path='/create-listing' element={<CreateListing />} />
-          <Route path='/show-listing' element={< ShowListings/>} />
-          
+          <Route
+            path='/update-listing/:listingId'
+            element={<UpdateListing />}
+          />
         </Route>
 
       
