@@ -17,7 +17,56 @@
     color: red;
   }
   .image-container {
-    height: 500px;
+    height: 350px;
 
   }
+  #servicePrice {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #00BFA6;
+    background-color: #f4f4f4;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+}
+#serviceDescription {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #666;
   
+  line-height: 1.6;
+  margin-top: 20px;
+  max-height: 200px; /* Set a maximum height for the container */
+  overflow-y: auto; /* Enable vertical scrollbar if content exceeds the maximum height */
+  word-wrap: break-word;
+  padding: 0% 1%; /* Allow words to break if they exceed the container width */
+}
+
+#descriptionHeading {
+  font-family: Arial, sans-serif;
+  font-size: 28px; /* Increased font size for emphasis */
+  color: #333; /* Dark gray color */
+  border-bottom: 2px solid #00BFA6; /* Add a bottom border for visual appeal */
+
+  margin-top: 30px;
+  padding: 0% 1%; /* Add space above the heading */
+}
+#Experience {
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  color: #333; /* Dark gray color */
+  line-height: 1.6;
+  margin-top: 20px;
+  max-height: 200px; /* Set a maximum height for the container */
+  overflow-y: auto; /* Enable vertical scrollbar if content exceeds the maximum height */
+  word-wrap: break-word;
+  padding: 0% 1%;
+
+}
+
+/* Style for the word "Experience" */
+#Experience strong {
+  font-weight: bold; /* Make the word bold */
+  font-size: 24px; /* Increase the font size */
+
+}

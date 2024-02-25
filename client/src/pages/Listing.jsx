@@ -58,7 +58,10 @@ function Listing() {
             ))}
           </Swiper>
 
-
+          <h2 id="servicePrice">Service Price : {listing.minPrice} - {listing.maxPrice} pkr</h2>
+          <h3 id="descriptionHeading">Description</h3>
+          <p id="serviceDescription">{listing.description}</p>
+          <p id="Experience"><strong>Experience (year) :</strong> {listing.experience} </p>
 </div>
 
 
