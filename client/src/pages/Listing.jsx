@@ -3,15 +3,22 @@ import { useEffect,useState} from 'react';
 import { useParams } from 'react-router-dom';
 import './style/Listing.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useSelector } from 'react-redux';
 import SwiperCore from 'swiper';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css/bundle';
+import Contact from '../components/Contact';
 function Listing() {
     SwiperCore.use([Navigation])
     const params = useParams();
     const [listing, setListing] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const [contact, setContact] = useState(false);
+  const { currentUser } = useSelector((state) => state.user);
+
+console.log(currentUser._id,currentUser.userRef)
     useEffect(() => {
         const fetchListing = async () => {
           try {
@@ -62,6 +69,17 @@ function Listing() {
           <h3 id="descriptionHeading">Description</h3>
           <p id="serviceDescription">{listing.description}</p>
           <p id="Experience"><strong>Experience (year) :</strong> {listing.experience} </p>
+
+
+          {currentUser && listing.userRef !== currentUser._id && !contact && (
+              <button
+                onClick={() => setContact(true)}
+                className='custom-button'
+              >
+                Contact landlord
+              </button>
+                )}
+                     {contact && <Contact listing={listing} />}
 </div>
 
 
