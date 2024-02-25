@@ -8,23 +8,23 @@ list-style-type: none;
 .mainHeadDiv ul li:nth-child(1) img{
     width:200px ;
 }
-.mainHeadDiv ul li:nth-child(2) input{
-width:800px;
-height: 50px;
-font-size: 20px;
-border-radius: 20px;
-outline: none;
-border: 1px solid #ccc;;
-padding: 0px 30px;
+.mainHeadDiv ul li:nth-child(2) input {
+  width: 800px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 20px;
+  outline: none;
+  border: 1px solid #ccc;
+  padding: 0px 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
 }
-/* Header.css */
 .no-underline {
-    text-decoration: none;
-    color: #00BFA6;
-    font-size: 20px;
- 
-   transition: 5sec ease-in-out;
-  }
+  text-decoration: none; /* Remove text decoration */
+  color: #00BFA6;
+  font-size: 20px;
+  transition: 5s ease-in-out; /* Adjusted transition */
+}
+
 .no-underline:hover{
    text-decoration: underline;
    text-underline-offset: 0.25rem;
@@ -32,6 +32,8 @@ padding: 0px 30px;
 
 
   }
+
+
   .profile-Img{
     border-radius: 9999px; 
     height: 1.75rem;
@@ -44,3 +46,43 @@ padding: 0px 30px;
     width: 1.75rem; /* Equivalent to w-7 in Tailwind CSS */
     object-fit: cover; /* Equivalent to object-cover in Tailwind CSS */
   }
+  /* .search-icon {
+    position: absolute;
+    top: 5.5%;
+    right: 25%;    
+    color: #fff;
+    font-size: 20px;
+   
+    padding: 0.5%;
+    border-radius: 50%;
+    background-color: #00BFA6; 
+    
+  cursor: pointer;
+    
+  }
+   */
+   .search-button {
+    position: relative; /* Ensure relative positioning for absolute children */
+    background-color: transparent; /* Transparent background */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor */
+    padding: 5px; /* Adjust padding as needed */
+  }
+  
+  /* Adjusting the button's position to match the search icon */
+  .search-button {
+    position: absolute;
+    top: 4.8%;
+    right: 25%;
+  }
+  
+  /* Additional styles for the button icon */
+  .search-button .search-icon {
+    color: #fff;
+    font-size: 20px;
+    padding: 0.4em; /* Adjust padding as needed */
+    border-radius: 50%;
+    background-color: #00BFA6;
+    cursor: pointer;
+  }
+  
