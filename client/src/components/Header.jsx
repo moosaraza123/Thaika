@@ -43,11 +43,18 @@ function Header() {
   
         <li>
           <form   onSubmit={handleSubmit}>
-          <input type="search"    value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+          <div style={{ position: 'relative' }}>
+  <input 
+    type="search"    
+    value={searchTerm} 
+    onChange={(e) => setSearchTerm(e.target.value)} 
+    style={{ paddingRight: '40px' }} // Adjust padding to accommodate the button
+  />
+  <button className="search-button" style={{ position: 'absolute', right: 0, top: 0 }}>
+    <FaSearch className="search-icon" />
+  </button>
+</div>
 
-          <button className="search-button">
-  <FaSearch className="search-icon" />
-</button>
 
             
           </form>

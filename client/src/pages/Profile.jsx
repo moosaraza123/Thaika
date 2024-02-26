@@ -223,7 +223,7 @@ function Profile() {
           </div>
         </form>
         <div className="secondmain">
-          <Link className="links" to={"/create-listing"}> List you services</Link>
+          <Link className="links" to={"/create-listing"}> List your services</Link>
           <Link className="links" onClick={handleShowListings}>show your services</Link>
           <p style={{ color: 'red', marginTop: '5px' }}>
             {showListingsError ? 'Error showing listings' : ''}

@@ -9,6 +9,7 @@ list-style-type: none;
     width:200px ;
 }
 .mainHeadDiv ul li:nth-child(2) input {
+  position: relative;
   width: 800px;
   height: 50px;
   font-size: 20px;
@@ -62,19 +63,18 @@ list-style-type: none;
   }
    */
    .search-button {
-    position: relative; /* Ensure relative positioning for absolute children */
+position: absolute;
     background-color: transparent; /* Transparent background */
     border: none; /* No border */
     cursor: pointer; /* Pointer cursor */
-    padding: 5px; /* Adjust padding as needed */
+    padding: 5px;
+   
+    top: 4.9%;
+    right: 24%;/* Adjust padding as needed */
   }
   
   /* Adjusting the button's position to match the search icon */
-  .search-button {
-    position: absolute;
-    top: 4.8%;
-    right: 24%;
-  }
+
   
   /* Additional styles for the button icon */
   .search-button .search-icon {
@@ -85,6 +85,11 @@ list-style-type: none;
     background-color: #00BFA6;
     cursor: pointer;
   }
+
+
+
+
+
   @media screen and (min-width: 320px) and (max-width: 480px) {
     .mainHeadDiv ul {
         flex-direction: row; /* Adjust to column layout for mobile */
