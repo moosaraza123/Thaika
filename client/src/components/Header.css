@@ -22,11 +22,11 @@ list-style-type: none;
   text-decoration: none; /* Remove text decoration */
   color: #00BFA6;
   font-size: 20px;
-  transition: 5s ease-in-out; /* Adjusted transition */
+  ; /* Adjusted transition */
 }
 
 .no-underline:hover{
-   text-decoration: underline;
+   text-decoration: underline dashed;
    text-underline-offset: 0.25rem;
    text-decoration-thickness: 2px;
 
@@ -73,7 +73,7 @@ list-style-type: none;
   .search-button {
     position: absolute;
     top: 4.8%;
-    right: 25%;
+    right: 24%;
   }
   
   /* Additional styles for the button icon */

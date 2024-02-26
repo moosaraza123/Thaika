@@ -65,7 +65,7 @@ function Header() {
           </Link>
         </li>
   
-       <Link to='/profile'>
+       <Link to='/profile'  className='no-underline'>
   {currentUser ? (
     <img
       className='headerprofileimg'
@@ -73,7 +73,7 @@ function Header() {
       alt='profile'
     />
   ) : (
-    <li  className='no-underline'>Sign in</li>
+    <li  >Sign in</li>
   )}
 </Link>
 
