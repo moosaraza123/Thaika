@@ -18,7 +18,6 @@ function Listing() {
   const [contact, setContact] = useState(false);
   const { currentUser } = useSelector((state) => state.user);
 
-console.log(currentUser._id,currentUser.userRef)
     useEffect(() => {
         const fetchListing = async () => {
           try {
@@ -64,6 +63,10 @@ console.log(currentUser._id,currentUser.userRef)
               </SwiperSlide>
             ))}
           </Swiper>
+          <div>
+  <h2 className="service-heading">Name of Service : <span className="service-name">{listing.name}</span></h2>
+</div>
+
 
           <h2 id="servicePrice">Service Price : {listing.minPrice} - {listing.maxPrice} pkr</h2>
           <h3 id="descriptionHeading">Description</h3>

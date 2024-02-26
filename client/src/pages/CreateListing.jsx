@@ -31,6 +31,7 @@ function CreateListing() {
   const [loading, setLoading] = useState(false);
 
   const handleImageSubmit = (e) => {
+    e.preventDefault()
     if (files.length > 0 && files.length + formData.imageUrls.length < 7) {
       setUploading(true);
       setImageUploadError(false);

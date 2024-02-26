@@ -91,3 +91,19 @@
   color: #00BFA6;
   border: 1px solid #00BFA6;
 }
+.service-heading {
+  font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #00BFA6;
+    background-color: #f4f4f4;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 1%;
+}
+
+.service-name {
+  font-size: 20px;
+  color: #00BFA6; /* Adjust the color as needed */
+  /* Additional styling for the name, such as font-family, text-decoration, etc. */
+}

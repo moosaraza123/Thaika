@@ -87,7 +87,7 @@ function Signup() {
           {error && <p>{error}</p>}
         </div>
       </div>
-      sign up
+     
 </>
 }
 
