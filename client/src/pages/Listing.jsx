@@ -79,7 +79,7 @@ function Listing() {
                 onClick={() => setContact(true)}
                 className='custom-button'
               >
-                Contact landlord
+                Contact Service Provider 
               </button>
                 )}
                      {contact && <Contact listing={listing} />}
