@@ -85,4 +85,44 @@ list-style-type: none;
     background-color: #00BFA6;
     cursor: pointer;
   }
-  
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    .mainHeadDiv ul {
+        flex-direction: row; /* Adjust to column layout for mobile */
+        align-items: center; /* Center items vertically */
+    }
+
+    .mainHeadDiv ul li:nth-child(1) img {
+        width: 150px; /* Adjust image width for mobile */
+    }
+
+    .mainHeadDiv ul li:nth-child(2) input {
+        width: 90%; /* Adjust input width for mobile */
+        max-width: 300px; /* Set max-width for smaller screens */
+        height: 40px; /* Adjust input height for mobile */
+        font-size: 16px; /* Adjust font size for mobile */
+        border-radius: 20px;
+        padding: 0px 15px; /* Adjust padding for mobile */
+        margin-top: 10px; /* Add margin top for spacing */
+    }
+    #home{
+      display: none;
+    }
+
+    .search-button {
+        top: 4%; /* Adjust button position for mobile */
+        right: 15%; /* Adjust button position for mobile */
+    }
+
+    .search-button .search-icon {
+        font-size: 16px; /* Adjust icon size for mobile */
+        padding: 0.3em; /* Adjust padding for mobile */
+    }
+    .no-underline:nth-child(1){
+      display: none;
+    }
+    .headerprofileimg {
+      height: 2rem;
+      
+    }
+    
+}

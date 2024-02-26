@@ -112,3 +112,63 @@ transition: 2s;
 .SignInBtn1:hover{
     opacity: 0.3;
 }
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    /* Center the login form div */
+    .SignInDiv {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center horizontally */
+        justify-content: center; /* Center vertically */
+        margin-top: 10%; /* Adjust margin top for positioning */
+    }
+
+    /* Hide all mockup-related elements for mobile */
+    .SignMockup, #mockup2, #mockup3 {
+        display: none;
+    }
+    .SignMockup img{
+        display: none;
+    }
+
+    /* Adjustments for the sign-in form */
+    .SignInForm {
+        width: 100%;
+        margin-top: 20%; /* Adjust margin top for spacing */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Adjustments for sign-in form inputs */
+    .SignInForm input {
+        width: 100%; /* Take up full width */
+        max-width: 300px; /* Limit maximum width */
+        font-size: 20px; /* Adjust font size */
+        margin-bottom: 10px; /* Adjust bottom margin */
+    }
+
+    /* Adjustments for the sign-in button */
+    .SignInBtn1, #googleBtn {
+        font-size: 24px; /* Adjust font size */
+        padding: 10px 0; /* Adjust padding */
+        width: 100%; /* Take up full width */
+        max-width: 300px; /* Limit maximum width */
+        margin-top: 20px; /* Adjust top margin */
+        text-align: center;
+    }
+
+    /* Hide Google sign-in button image for mobile */
+    #googleBtn img {
+        display: none;
+    }
+
+    /* Move mockup texts after the form */
+    #mockupText, #mockupText2 {
+ display: none;
+    }
+    .no-underline li{
+        font-size: 10px;
+        
+    }
+
+}

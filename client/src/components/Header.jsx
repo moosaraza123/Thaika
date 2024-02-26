@@ -54,7 +54,7 @@ function Header() {
         </li>
   
         <li>
-          <Link to='/'>
+          <Link  id='home' to='/'>
             <img src={home} alt="" />
           </Link>
         </li>

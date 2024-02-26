@@ -131,4 +131,17 @@ cursor: pointer;
   }
   /* Additional styles for ListingItem component */
   
-  
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+
+    .herocontainer h1{
+      font-size: 70px;
+    }
+    .herocontainer button{
+    font-size: 15px;
+    width: 40%;
+    }
+    #shovel{
+      left: 18%;
+      top: 79%;
+    }
+  }
