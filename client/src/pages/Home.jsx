@@ -6,8 +6,11 @@ import SwiperCore from 'swiper';
 import 'swiper/css/bundle';
 import ListingItem from '../components/ListingItem';
 import './style/home.css'
+import { useNavigate } from 'react-router-dom';
 import { GiBulldozer } from "react-icons/gi";
+
 function Home() {
+  const navigate = useNavigate();
   const [offerListings, setOfferListings] = useState([]);
   SwiperCore.use([Navigation]);
   console.log(offerListings);
@@ -27,7 +30,9 @@ function Home() {
  
     fetchOfferListings();
   }, []);
-
+  const handleButtonClick = () => {
+    navigate('/cities'); // Navigate to the List page
+  };
 
 
 return <>
@@ -35,7 +40,7 @@ return <>
 <h1> Discover Your Perfect Building Experience with Ease ! </h1>
 
 
-<button >let’s start now..</button>
+<button onClick={handleButtonClick} className='herocontainerButton'>Evaluate Price now..</button>
 
 <GiBulldozer id='shovel'/>
 

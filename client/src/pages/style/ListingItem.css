@@ -1,76 +1,86 @@
 .listingItemContainer {
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    border-radius: 8px;
-    width: 100%;
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .listingItemContainer:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .listingLink {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .listingImage {
-    height: 320px;
-    width: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-  
-  .listingImage:hover {
-    transform: scale(1.05);
-  }
-  
-  .listingDetails {
-    padding: 12px;
-  }
-  
-  .listingName {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 8px;
-  }
-  
-  .locationContainer {
-    display: flex;
-    align-items: center;
-    color: #666;
-    margin-bottom: 8px;
-  }
-  
-  .locationIcon {
-    height: 16px;
-    width: 16px;
-  }
-  
-  .description {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 8px;
-  }
-  
-  .price {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 8px;
-  }
-  
-  .details {
-    display: flex;
-    color: #666;
-  }
-  
-  .detail {
-    font-size: 14px;
-    font-weight: bold;
-    margin-right: 16px;
-  }
-  
+  position: relative;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
+
+.listingImageContainer {
+  width: 200px;
+}
+
+.listingImage {
+  width: 100%;
+  height: auto;
+}
+
+.listingDetails {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.listingName {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.listingDescription {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.locationContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.locationIcon {
+  color: #333;
+  margin-right: 5px;
+}
+
+.listingLocation {
+  font-size: 14px;
+  color: #555;
+}
+
+.listingPrice {
+  font-size: 16px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.contactProviderButton {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contactProviderButton:hover {
+  background-color: #0056b3;
+}
+
+.phoneIcon {
+  margin-right: 5px;
+}
+
+.listingLink {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1; /* Ensure link is clickable above button */
+}
