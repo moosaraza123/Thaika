@@ -12,6 +12,8 @@ import cors from 'cors'; // Import cors middleware
 
 process.env.PYTHON = '/opt/anaconda3/bin/python';
 const app = express();
+
+const __dirname = path.resolve();
 app.use(express.json());
 app.use(cookieParser());
 
@@ -139,7 +141,7 @@ app.get('/predict_karachi', (req, res) => {
 });
 
 
-const __dirname = path.resolve();
+
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/listing', listingRouter);
