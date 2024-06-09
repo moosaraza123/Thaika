@@ -11,8 +11,8 @@
   ],
   "env": {
     "MONGO": "mongodb+srv://Moosa:moosa@thaika.zbazmd4.mongodb.net/?retryWrites=true&w=majority",
-    "JWT_secret":"eoifkjefeu6193611986",
-    "VITE_FIREBASE_API_KEY":"AIzaSyDARpR-QRdPMFDEDgiah9TCj5lFK8y7FXk"
-  
+    "JWT_secret": "eoifkjefeu6193611986",
+    "VITE_FIREBASE_API_KEY": "AIzaSyDARpR-QRdPMFDEDgiah9TCj5lFK8y7FXk",
+    "PYTHON": "/opt/anaconda3/bin/python"
   }
 }
