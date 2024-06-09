@@ -7,8 +7,9 @@
   "scripts": {
     "dev": "nodemon --exec babel-node api/index.js",
     "start": "node dist/index.js",
-    "build": "npm install && npm install --prefix client && npm run build --prefix client && npm run babel",
-    "babel": "babel src -d dist --copy-files"
+    "build": "npm install && npm run build-client && npm run babel",
+    "build-client": "npm install --prefix client && npm run build --prefix client",
+    "babel": "babel api -d dist --copy-files"
   },
   "keywords": [],
   "author": "",
@@ -30,7 +31,7 @@
     "react-redux": "^9.1.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.24.7", 
+    "@babel/cli": "^7.24.7",
     "@babel/core": "^7.24.7",
     "@babel/node": "^7.14.7",
     "@babel/preset-env": "^7.24.7",
