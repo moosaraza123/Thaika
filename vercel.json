@@ -2,17 +2,16 @@
   "version": 2,
   "name": "thaika",
   "builds": [
-    { "src": "api/index.js", "use": "@vercel/node" },
+    { "src": "api/dist/*.js", "use": "@vercel/node" },
     { "src": "client/package.json", "use": "@vercel/static-build" }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "api/index.js" },
-    { "src": "/(.*)", "dest": "client/$1" }
+    { "src": "/api/(.*)", "dest": "api/dist/index.js" },
+    { "src": "/(.*)", "dest": "client/index.html" }
   ],
   "env": {
     "MONGO": "mongodb+srv://Moosa:moosa@thaika.zbazmd4.mongodb.net/?retryWrites=true&w=majority",
-    "PYTHON": "/opt/anaconda3/bin/python",
-    "JWT_SECRET": "eoifkjefeu6193611986",
+    "JWT_secret": "eoifkjefeu6193611986",
     "VITE_FIREBASE_API_KEY": "AIzaSyDARpR-QRdPMFDEDgiah9TCj5lFK8y7FXk"
   }
 }
