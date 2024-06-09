@@ -135,6 +135,7 @@ color: grey;
     width: 8rem;
     height: 8rem;
     object-fit: contain;
+    padding: 2%;
   }
   
   .listing-name {

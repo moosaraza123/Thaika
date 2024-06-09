@@ -18,7 +18,8 @@ margin: 10% auto;        /* Full viewport height for centering */
   
 .Lahore{
     margin: 10px;  
-    padding: 10px 50px;
+    width: 20%;
+    padding: 10px 60px;
     background: #00BFA6;
     color: #FFF;
     font-size: 2vw; /* Responsive font size */
@@ -31,4 +32,10 @@ margin: 10% auto;        /* Full viewport height for centering */
     
   text-align: center;
 
+}
+.Lahore:hover{
+  background-color: #fff;
+   color: #00BFA6;
+   border: 1px solid #00BFA6;
+   
 }

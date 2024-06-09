@@ -1,5 +1,11 @@
+
+// //
+
 import React, { useState } from 'react';
 import axios from 'axios';
+import { getRandomImage } from '../utils/getRandomImage.js';
+import { imageData } from './fetchData.js'; // Import imageData
+import { roundToNearestCrore } from '../utils/roundToNearestCrore.js'; // Import rounding function
 import './style/Predict_lahore.css'; // Import your CSS file
 
 function Predict_Karachi() {
@@ -9,27 +15,42 @@ function Predict_Karachi() {
   const [baths, setBaths] = useState('');
   const [prediction, setPrediction] = useState(null);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false); // Track loading state
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Set loading to true when prediction request starts
+    setLoading(true); // Start loading
     try {
       const response = await axios.get('http://localhost:3000/predict_karachi', {
-        params: { location, sqft, bedrooms, baths }
+        params: { location, sqft, bedrooms, baths },
       });
       console.log('Response from backend:', response.data);
       setPrediction(response.data.prediction);
-      setError(null); // Clear any previous errors
-    } catch (error) {
-      console.error('Error fetching prediction:', error);
-      setError('Error fetching prediction. Please try again.'); // Set error message
+      setError(null); // Clear previous errors
+    } catch (err) {
+      console.error('Error fetching prediction:', err);
+      setError('Error fetching prediction. Please try again.');
       setPrediction(null); // Clear any previous prediction
     } finally {
-      setLoading(false); // Set loading to false when prediction request ends
+      setLoading(false); // Stop loading
     }
   };
-  
+
+  // Convert prediction to crores (1 crore = 10 million)
+  const predictionInCr = prediction ? parseFloat(prediction) / 100 : null;
+
+  // Apply rounding logic to get the correct "standard" priceInCr
+  const priceInCr = predictionInCr ? roundToNearestCrore(predictionInCr) : null;
+
+  const roomArray = priceInCr ? imageData[`${priceInCr}cr`]?.rooms : [];
+  const washroomArray = priceInCr ? imageData[`${priceInCr}cr`]?.washrooms : [];
+
+  const roomImage = getRandomImage(roomArray); // Random room for predicted price
+  const washroomImage = getRandomImage(washroomArray); // Random washroom for predicted price
+
+  const additionalRoomImage = getRandomImage(roomArray); // Extra random room
+  const additionalWashroomImage = getRandomImage(washroomArray); // Extra random washroom
+
   const locations =[
     "DHA Defence",
     "Bahria Town Karachi",
@@ -77,19 +98,22 @@ function Predict_Karachi() {
     <div id="predict-container">
       <h1>Property Price Predictor</h1>
       <form id="predict-form" onSubmit={handleSubmit}>
-        {/* Location dropdown */}
         <label htmlFor="location-select">
           Location:
           <select id="location-select" value={location} onChange={(e) => setLocation(e.target.value)}>
             <option value="">Select a location</option>
             {locations.map((loc) => (
-              <option key={loc} value={loc}>{loc}</option>
+              <option key={loc} value={loc}>
+                {loc}
+              </option>
             ))}
           </select>
         </label>
+
         <br />
-        {/* Square footage input */}
-        <label htmlFor="sqft-input">
+
+          {/* Square Footage */}
+          <label htmlFor="sqft-input">
           Square Footage:
           <input
             id="sqft-input"
@@ -98,8 +122,10 @@ function Predict_Karachi() {
             onChange={(e) => setSqft(e.target.value)}
           />
         </label>
+        
         <br />
-        {/* Bedrooms input */}
+        
+        {/* Bedrooms */}
         <label htmlFor="bedrooms-input">
           Bedrooms:
           <input
@@ -109,8 +135,10 @@ function Predict_Karachi() {
             onChange={(e) => setBedrooms(e.target.value)}
           />
         </label>
+        
         <br />
-        {/* Bathrooms input */}
+        
+        {/* Bathrooms */}
         <label htmlFor="baths-input">
           Bathrooms:
           <input
@@ -120,19 +148,56 @@ function Predict_Karachi() {
             onChange={(e) => setBaths(e.target.value)}
           />
         </label>
+        
         <br />
-        {/* Submit button */}
-        <button id="predict-button" type="submit" disabled={loading}>Predict Price</button> {/* Disable button when loading */}
+        
+        <button type="submit" disabled={loading}>
+          Predict Price
+        </button>
       </form>
-      
-      {/* Display prediction */}
-      {error && <div id="error-message">Error: {error}</div>}
+
+      {error && <div id="error-message">Error: {error}</div>} {/* Display error message */}
+
       {prediction !== null && (
         <div id="prediction">
           <h2>Predicted Price:</h2>
-          <p id="predicted-price">Predicted Price is: {Math.round(prediction)} Lakhs</p>
+          <p>Predicted Price is: {Math.ceil(prediction)} Lakhs</p>
+
+          {roomImage && (
+            <div>
+              <h3>Room Image:</h3>
+              <img src={roomImage} alt="Room" style={{ maxWidth: '100%', height: 'auto' }} />
+            </div>
+          )}
+
+          {washroomImage && (
+            <div>
+              <h3>Washroom Image:</h3>
+              <img src={washroomImage} alt="Washroom"style={{ maxWidth: '100%', height: 'auto' }} />
+            </div>
+          )}
         </div>
       )}
+
+      {/* Additional random room and washroom images */}
+      <div id="additional-images">
+  <h2>Additional Random Images:</h2>
+
+  {additionalRoomImage && (
+    <div>
+      <h3>Additional Room:</h3>
+      <img src={additionalRoomImage} alt="Additional Room" style={{ maxWidth: '100%', height: 'auto' }} />
+    </div>
+  )}
+
+  {additionalWashroomImage && (
+    <div>
+      <h3>Additional Washroom:</h3>
+      <img src={additionalWashroomImage} alt="Additional Washroom" style={{ maxWidth: '100%', height: 'auto' }} />
+    </div>
+  )}
+</div>
+
     </div>
   );
 }

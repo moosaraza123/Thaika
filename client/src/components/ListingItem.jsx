@@ -17,11 +17,8 @@ export default function ListingItem({ listing }) {
       <div className='listingDetails'>
         <p className='listingName'>{listing.name}</p>
         <p className='listingDescription'>{listing.description}</p>
-        <div className='locationContainer'>
-          <MdLocationOn className='locationIcon' />
-          <p className='listingLocation'>{listing.location}</p>
-        </div>
-        <p className='listingPrice'>{listing.price}</p>
+     
+        <p className='listingPrice'>{listing.minPrice} - {listing.maxPrice} pkr</p>
         <button className='contactProviderButton'>
           <FaPhone className='phoneIcon' />
           Contact Provider
