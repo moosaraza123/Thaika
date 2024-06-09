@@ -1,4 +1,3 @@
-// Import necessary modules
 import express from 'express';
 import dotenv from 'dotenv';
 import userRoutes from './routes/user.route.js';
@@ -10,35 +9,32 @@ import { MongoClient, GridFSBucket } from 'mongodb';
 import { spawn } from 'child_process';
 import cors from 'cors'; // Import cors middleware
 
-// Set Python environment path
 process.env.PYTHON = '/opt/anaconda3/bin/python';
-
-// Initialize Express app
 const app = express();
 
-// Resolve __dirname
 const __dirname = path.resolve();
-
-// Middleware
 app.use(express.json());
 app.use(cookieParser());
+
+import mongoose from 'mongoose';
+dotenv.config();
 
 // Enable CORS middleware
 app.use(cors());
 
-// Connect to MongoDB
+app.listen(3000, () => {
+    console.log('Server is running on port 3000!');
+});
+
 mongoose.connect(process.env.MONGO)
     .then(() => {
         console.log('Connected to MongoDB!');
     })
     .catch((err) => {
         console.log(err);
+   
     });
 
-// Serve static files
-app.use(express.static(path.join(__dirname, 'client')));
-
-// API Routes
 app.get('/image/:priceRange/:category', async (req, res) => {
     const { priceRange, category } = req.params;
     const client = new MongoClient(process.env.MONGO);
@@ -78,7 +74,6 @@ app.get('/image/:priceRange/:category', async (req, res) => {
     }
 });
 
-// Prediction Routes
 app.get('/predict_lahore', (req, res) => {
     console.log('Received prediction request:', req.query); // Log the request parameters
     const { location, sqft, bedrooms, baths } = req.query;
@@ -89,12 +84,12 @@ app.get('/predict_lahore', (req, res) => {
     let prediction = null;
 
     pythonProcess.stdout.on('data', (data) => {
-        const predictedPrice = parseFloat(data.toString());
+        const predictedPrice = parseFloat(data.toString()); 
         
-        console.log('I am here');
+        console.log('I am here'); // Corrected spelling mistake
         console.log(`Predicted Price is: ${predictedPrice}`);
         console.log(typeof(predictedPrice));
-    
+     
         prediction = predictedPrice;
     });
 
@@ -105,7 +100,7 @@ app.get('/predict_lahore', (req, res) => {
     pythonProcess.on('close', (code) => {
         console.log(`Python script process exited with code ${code}`);
         if (prediction !== null) {
-            console.log('Sending response');
+            console.log('I am sending response');
             res.json({ prediction: prediction.toString() }); // Send the prediction back to the frontend as a string
         } else {
             res.status(500).json({ success: false, message: 'Prediction not available' });
@@ -123,12 +118,12 @@ app.get('/predict_karachi', (req, res) => {
     let prediction = null;
 
     pythonProcess.stdout.on('data', (data) => {
-        const predictedPrice = parseFloat(data.toString());
+        const predictedPrice = parseFloat(data.toString()); 
         
-        console.log('I am here');
+        console.log('I am here'); // Corrected spelling mistake
         console.log(`Predicted Price is: ${predictedPrice}`);
         console.log(typeof(predictedPrice));
-    
+     
         prediction = predictedPrice;
     });
 
@@ -139,7 +134,7 @@ app.get('/predict_karachi', (req, res) => {
     pythonProcess.on('close', (code) => {
         console.log(`Python script process exited with code ${code}`);
         if (prediction !== null) {
-            console.log('Sending response');
+            console.log('I am sending response');
             res.json({ prediction: prediction.toString() }); // Send the prediction back to the frontend as a string
         } else {
             res.status(500).json({ success: false, message: 'Prediction not available' });
@@ -147,18 +142,9 @@ app.get('/predict_karachi', (req, res) => {
     });
 });
 
-// API Routes
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/listing', listingRouter);
-
-// Catch all other routes and return the index file
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'client', 'index.html'));
-});
-
-// Start server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}!`);
 });
